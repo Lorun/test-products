@@ -1,0 +1,14 @@
+.productForm {
+
+    input[type="text"] {
+        border: 1px solid #eee;
+        background-color: #fff;
+        width: 100%;
+        line-height: 2.5rem;
+        font-size: 1rem;
+    }
+
+    label {
+        display: block;
+    }
+}
