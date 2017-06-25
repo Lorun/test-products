@@ -195,6 +195,8 @@ module.exports = {
                     ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
                     plugins: () => [
                       require('postcss-flexbugs-fixes'),
+                      require('postcss-cssnext'),
+                      require('postcss-nested'),
                       autoprefixer({
                         browsers: [
                           '>1%',
@@ -228,6 +230,22 @@ module.exports = {
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
+      template: paths.appHtml,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+      },
+    }),
+    new HtmlWebpackPlugin({  // Also generate a test.html
+      filename: paths.appBuild+'/200.html',
       template: paths.appHtml,
       minify: {
         removeComments: true,
