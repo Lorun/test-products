@@ -64,18 +64,15 @@ class ProductForm extends React.Component {
                 ...this.state.values,
                 name
             }
-        });
-
-        this.validate('name');
+        }, () => {this.validate('name')});
     }
 
     validate(key) {
-        let message = validationRules[key].reduce((prev, current) => {
-            message = !message && !current.rule(this.state.values[key])
+        let message = validationRules[key].reduce((prev, current) => (
+            (!message && !current.rule(this.state.values[key]))
                 ? current.message
-                : message;
-            return message;
-        }, '');
+                : message
+        ), '');
 
         this.setState({
             errorText: !!message ? {[key]: message} : {}
