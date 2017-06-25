@@ -1,6 +1,6 @@
 # Test Products App #
 
-This simple test app created utilizing React, Redux and material UI libraries.
+This simple test app is created utilizing React, Redux and material UI libraries.
 
 ## Installation ##
 Clone this repository:
