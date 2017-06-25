@@ -1,14 +1,26 @@
+:root {
+    --color-border: #ccc;
+}
+
 .productForm {
+    display: block;
+    padding: 1rem;
 
     input[type="text"] {
-        border: 1px solid #eee;
+        border: 1px solid var(--color-border);
         background-color: #fff;
         width: 100%;
-        line-height: 2.5rem;
+        line-height: 2rem;
         font-size: 1rem;
+        padding: 0 0.5rem;
     }
 
     label {
         display: block;
+    }
+    
+    &-label {
+        margin-bottom: 0.5em;
+        color: #aaaaaa;
     }
 }

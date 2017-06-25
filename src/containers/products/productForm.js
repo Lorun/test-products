@@ -4,7 +4,9 @@ import ProductForm from '../../components/products/ProductForm';
 
 const ProductFormContainer = () => (
     <div>
-        <h1>Creating new product</h1>
+        <div className="App-head">
+            <h2>Add Product</h2>
+        </div>
         <ProductForm/>
     </div>
 );
